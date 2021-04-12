@@ -1,32 +1,78 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <the-header
+     title="Symbol Dot CRM"
+     :mainMenu="[
+         {name: 'Контакты', href: '/contacts'},
+         {name: 'Компании', href: '/companies'},
+         {name: 'Воронки продаж', href: '/sales-funnels'},
+         {name: 'О проекте', href: '/about'}
+     ]"
+     :authMenu="[
+         {name: 'Вход', href: '/login', auth: false},
+         {name: 'Регистрация', href: '/registration', auth: false},
+         {name: 'Личный кабинет', href: '/profile', auth: true}
+     ]"
+    >
+    </the-header>
+
     <router-view/>
   </div>
 </template>
 
+<script>
+import TheHeader from "@/components/Layouts/TheHeader";
+
+export default {
+  name: "App",
+  components: {TheHeader}
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  background: #e6f5ff;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
+.text {
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
-  color: #2c3e50;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.header {
+  font-family: 'Russo One', sans-serif;
+}
+.background {
+  background: #0099ff;
+}
+.preview-container {
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.form {
+  background: #ccebff;
+  padding: 10px;
+}
+.container {
+  margin-top: 100px;
+}
+@media (max-width: 768px) {
+  .container {
+    margin-top: 10px;
+  }
+}
+.checkbox-label {
+  margin-left: 10px;
+}
+.page-link {
+  cursor: pointer;
 }
 </style>
