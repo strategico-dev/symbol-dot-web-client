@@ -91,9 +91,18 @@ export default {
     },
     changePage(page) {
       this.paginationPage = page;
-      this.$router.push({query: {page}});
+      this.$router.push({
+        query: {
+          ...this.$route.query, ...{page: page}
+        }
+      });
 
       this.$emit('changePage', page);
+    }
+  },
+  mounted() {
+    if(+this.$route.query.page) {
+      this.paginationPage = +this.$route.query.page;
     }
   }
 }
