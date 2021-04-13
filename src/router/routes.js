@@ -18,5 +18,20 @@ export default [
         path: '/contacts',
         name: 'Contacts',
         component: () => import('@/views/Contacts')
+    },
+    {
+        path: '/companies',
+        name: 'Companies',
+        component: () => import('@/views/Companies')
+    },
+    {
+        path: '/contacts/:id',
+        name: 'ContactDetail',
+        component: () => import('@/views/ContactDetail')
+    },
+    {
+        path: '/companies/:id',
+        name: 'CompanyDetail',
+        component: () => import('@/views/CompanyDetail')
     }
 ]
