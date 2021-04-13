@@ -1,7 +1,9 @@
 <template>
   <tr>
     <th scope="row">3</th>
-    <td>Larry</td>
+    <td>
+      <router-link to="/contacts/1">Larry</router-link>
+    </td>
     <td>the Bird</td>
     <td>@twitter</td>
   </tr>

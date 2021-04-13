@@ -75,4 +75,10 @@ body {
 .page-link {
   cursor: pointer;
 }
+.delete-button {
+  background: #ff0000;
+  border: 0;
+  padding: 8px;
+  color: #ffffff;
+}
 </style>
